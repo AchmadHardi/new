@@ -19,10 +19,10 @@ class ArticlesSeeder extends Seeder
         $faker = Faker::create('id_ID');
 
         for($i=0;$i<10;$i++){
-            DB::table('article')->insert([
-                'id' => $faker->unique()->randomNumber(),
-                'title' => $faker->title,
-                'content' => $faker->content,
+            DB::table('articles')->insert([
+            //   id ga usah ditulis udah otomatis
+                'title' => $faker->sentence(),
+                'content' => $faker->paragraph(),
                 'user_id' => $faker->unique()->randomNumber(),
                 'created_at' => date("Y-m-d H:i:s")
             ]);
